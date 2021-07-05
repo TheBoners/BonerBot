@@ -78,7 +78,7 @@ module.exports = {
                 .addFields(
                     { name: "\u200b", value: "\u200b" },
                     { name: ":information_source: __Informatie__", value: `*Alle commando's die\ninformatie geven.*\n**${informationAmount} Commando's**`, inline: true },
-                    { name: ":bonerCoins: __Games__", value: `*Alle commando's waarmee\nje games kan spelen.*\n**${gamesAmount} Commando's**`, inline: true },
+                    { name: ":video_game: __Games__", value: `*Alle commando's waarmee\nje games kan spelen.*\n**${gamesAmount} Commando's**`, inline: true },
                     { name: "\u200b", value: "\u200b" }
                 )
 
