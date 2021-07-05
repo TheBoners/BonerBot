@@ -1,7 +1,7 @@
 module.exports = {
-    name: 'hello',
+    name: 'hallo',
     description: 'Hallo.',
-    category: 'Information',
+    category: 'Informatie',
     execute(client, message, args) {
 
         return message.channel.send("Hallo.");
