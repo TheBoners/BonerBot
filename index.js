@@ -30,22 +30,6 @@ for (const file of commandFiles) {
 
 console.log(`${commandFiles.length} command files have been loaded.`);
 
-console.log("Loading system files...");
-
-client.systems = new discord.Collection();
-const systemFiles = fs.readdirSync('./systems').filter(file => file.endsWith('.js'));
-
-for (const file of systemFiles) {
-
-    const system = require(`./systems/${file}`);
-    client.systems.set(system.name, system);
-
-    console.log(`System file "${system.name}.js" has been loaded.`)
-
-}
-
-console.log(`${systemFiles.length} system files have been loaded.`);
-
 var prefix = botConfig.prefix;
 
 client.on("ready", async () => {
@@ -82,24 +66,6 @@ client.on("message", async message => {
     /*
     ROLE CHECK
     */
-
-    var returnStatements = [];
-
-    client.systems.forEach(system => {
-
-        var statement = system.execute(client, message, args);
-
-        returnStatements.push(statement);
-
-    })
-
-    var canContinue = true;
-
-    returnStatements.forEach(statement => {
-        if (statement == false) canContinue = false;
-    })
-
-    if (canContinue == false) return;
 
     var args = message.content.split(" ");
     var command = args[0]
