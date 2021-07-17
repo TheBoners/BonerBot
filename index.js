@@ -42,9 +42,6 @@ client.on("ready", async () => {
 
 client.on("message", async message => {
 
-    if (message.channel.type === "dm") return;
-    if (message.author.bot) return;
-
     /*
     ROLE CHECK
     */
@@ -66,6 +63,9 @@ client.on("message", async message => {
     /*
     ROLE CHECK
     */
+
+    if (message.channel.type === "dm") return;
+    if (message.author.bot) return;
 
     var args = message.content.split(" ");
     var command = args[0]
